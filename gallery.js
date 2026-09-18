@@ -4,7 +4,9 @@
 
   var tabs = Array.prototype.slice.call(document.querySelectorAll(".gallery-cat"));
   var panels = Array.prototype.slice.call(document.querySelectorAll(".gallery-panel"));
+  var cats = document.querySelector(".gallery-cats");
   var hint = document.getElementById("gallery-hint");
+  var gallery = document.getElementById("gallery");
   if (!tabs.length) return;
 
   function panelId(category) {
@@ -19,6 +21,7 @@
     panels.forEach(function (panel) {
       panel.hidden = true;
     });
+    if (cats) cats.classList.remove("is-open");
     if (hint) hint.hidden = false;
   }
 
@@ -38,12 +41,10 @@
       var on = panel.id === panelId(category);
       panel.hidden = !on;
     });
+    if (cats) cats.classList.add("is-open");
     if (hint) hint.hidden = true;
-    if (scroll) {
-      var panel = document.getElementById(panelId(category));
-      if (panel && typeof panel.scrollIntoView === "function") {
-        panel.scrollIntoView({ behavior: "smooth", block: "nearest" });
-      }
+    if (scroll && gallery && typeof gallery.scrollIntoView === "function") {
+      gallery.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   }
 
