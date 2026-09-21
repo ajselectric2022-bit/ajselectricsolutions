@@ -40,6 +40,26 @@ body {
   background: var(--white);
   -webkit-font-smoothing: antialiased;
   padding-bottom: 72px;
+  position: relative;
+}
+
+/* Subtle AJ's Electric Inc logo watermark — tiles as you scroll */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.07;
+  background-image: url("/images/logo-watermark.png");
+  background-repeat: repeat;
+  background-position: center top;
+  background-size: 320px auto;
+}
+
+body > * {
+  position: relative;
+  z-index: 1;
 }
 
 img {
@@ -234,7 +254,9 @@ ul {
 }
 
 /* —— Hero —— */
+/* keep hero opaque over watermark */
 .hero {
+  background: #0b1f3a;
   position: relative;
   color: var(--white);
   min-height: 88vh;
@@ -1134,60 +1156,16 @@ ul {
 .heat-learn strong { color: var(--text); }
 
 
-/* Services section — soft faded mountain backdrop (decorative) */
+
+
+/* Services section — clean (logo watermark shows through page background) */
 .section-services {
   position: relative;
-  isolation: isolate;
-  overflow: hidden;
-  background-color: #cfe0f0;
-  background-image: url("/images/services-mountains.png");
-  background-repeat: no-repeat;
-  background-position: center bottom;
-  /* Anchor mountains in the lower portion so tall sections never show empty sky only */
-  background-size: 100% 70%;
-}
-
-.section-services::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  pointer-events: none;
-  background-image: url("/images/services-mountains.png");
-  background-repeat: no-repeat;
-  background-position: center bottom;
-  background-size: 120% 65%;
-  opacity: 0.95;
-}
-
-.section-services .container {
-  position: relative;
-  z-index: 1;
+  background: rgba(255, 255, 255, 0.82);
 }
 
 .section-services .pillar,
 .section-services .service-card {
-  background: rgba(255, 255, 255, 0.94);
+  background: rgba(255, 255, 255, 0.96);
   box-shadow: 0 4px 20px rgba(11, 31, 58, 0.08);
-}
-
-.section-services .service-details-title {
-  color: var(--navy);
-}
-
-
-
-
-.services-mountains-fallback {
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  height: 55%;
-  object-fit: cover;
-  object-position: center bottom;
-  z-index: 0;
-  pointer-events: none;
-  opacity: 1;
 }
