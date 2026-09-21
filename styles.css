@@ -1097,3 +1097,34 @@ ul {
     transition: none;
   }
 }
+
+
+/* Heated driveway learn-more */
+.heat-details {
+  margin-top: 0.75rem;
+  border-top: 1px solid var(--gray-light);
+  padding-top: 0.75rem;
+}
+.heat-details summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--blue);
+  list-style: none;
+}
+.heat-details summary::-webkit-details-marker { display: none; }
+.heat-details summary::after {
+  content: " +";
+  font-weight: 700;
+}
+.heat-details[open] summary::after {
+  content: " −";
+}
+.heat-learn {
+  margin: 0.75rem 0 0;
+  padding-left: 1.1rem;
+  list-style: disc;
+  color: var(--gray);
+  font-size: 0.9375rem;
+}
+.heat-learn li { margin: 0.5rem 0; }
+.heat-learn strong { color: var(--text); }
