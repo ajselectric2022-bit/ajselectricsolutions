@@ -1143,7 +1143,7 @@ ul {
       rgba(245, 248, 252, 0.35) 40%,
       rgba(232, 242, 252, 0.25) 100%
     ),
-    url("images/services-mountains.svg");
+    url("images/services-mountains.png");
   background-repeat: no-repeat;
   background-position: center bottom;
   background-size: cover;
