@@ -646,7 +646,7 @@ ul {
 .gallery-cats {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1rem;
+  gap: 1.5rem;
 }
 
 .gallery-cat {
@@ -772,7 +772,7 @@ ul {
 .gallery-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.15rem;
+  gap: 1.75rem;
 }
 
 .gallery-grid-one {
@@ -995,7 +995,7 @@ ul {
 
   .gallery-grid {
     grid-template-columns: 1fr 1fr;
-    gap: 1.35rem;
+    gap: 2rem;
   }
 
   .gallery-grid-one {
